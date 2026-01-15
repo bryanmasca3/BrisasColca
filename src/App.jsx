@@ -40,7 +40,7 @@ function App() {
     {
       id: 3,
       title: "Barnizados de Lujo",
-      desc: "Protección con barnices de alta resistencia y brillantes.",
+      desc: "Protección con barniz DD para pisos de parquet con acabados brillantes.",
       img: "assets/barnizado.png",
     },
     {
