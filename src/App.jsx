@@ -26,48 +26,53 @@ function App() {
   const servicios = [
     {
       id: 1,
-      title: "Colocaciones Maestras",
-      desc: "Instalación experta de parqué y madera maciza con acabados artesanales únicos.",
-      img: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=800&q=80",
+      title: "Colocaciones",
+      desc: "Colocación de pisos de parquet con acabados profesionales.",
+      img: "assets/colocaciones.png",
       destacado: true,
     },
     {
       id: 2,
       title: "Pulidos de Parquet",
-      desc: "Restauración profunda con máquinas modernas sin polvo para recuperar el brillo original.",
-      img: "https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?auto=format&fit=crop&w=600&q=80",
+      desc: "Nivelamiento y pulido de pisos de parquet con acabados profesionales.",
+      img: "assets/pulidos.png",
     },
     {
       id: 3,
       title: "Barnizados de Lujo",
-      desc: "Protección con barnices de alta resistencia (DD, Bona) en acabados mate o brillante.",
-      img: "https://images.unsplash.com/photo-1505118380757-91f5f45d8de4?auto=format&fit=crop&w=600&q=80",
+      desc: "Protección con barnices de alta resistencia y brillantes.",
+      img: "assets/barnizado.png",
     },
     {
       id: 4,
       title: "Laminados y Vinílicos",
       desc: "Instalación de pisos modernos de alto tránsito, resistentes y de fácil mantenimiento.",
       icon: <Layers size={40} />,
+      img: "assets/laminados.png",
       color: "bg-amber-900",
     },
     {
       id: 5,
-      title: "Reparaciones Técnicas",
-      desc: "Sustitución de tablillas, tratamiento de humedad y nivelación de suelos.",
+      title: "Reparaciones de Pisos",
+      desc: "Sustitución de tablillas, tratamiento de humedades y reparaciones de pisos.",
       icon: <Ruler size={40} />,
+      img: "assets/reparaciones.png",
       color: "bg-slate-800",
     },
     {
       id: 6,
       title: "Zócalos Profesionales",
-      desc: "Colocación de zócalos en madera y MDF para un acabado estético impecable.",
+      desc: "Colocación de zócalos en madera y acabados estético impecable.",
       icon: <CheckCircle2 size={40} />,
+      img:"assets/zocalos.png",
       color: "bg-amber-700",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+    // SEO: Usamos 'main' para indicar contenido principal
+    <main className="min-h-screen bg-slate-50 font-sans text-slate-900">
+      
       {/* --- NAVBAR --- */}
       <nav className="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
@@ -102,9 +107,10 @@ function App() {
       <header className="relative h-[85vh] flex items-center justify-center text-white overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=1600&q=80"
+            src="https://plus.unsplash.com/premium_photo-1683134399397-2407679051f7?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             className="w-full h-full object-cover"
-            alt="Pisos de parqué de lujo"
+            // SEO: Alt descriptivo con ciudad
+            alt="Pisos de parqué de lujo en Arequipa - Brisas del Colca"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-slate-900/90"></div>
         </div>
@@ -117,10 +123,11 @@ function App() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-8xl font-black mb-6 leading-[0.9] tracking-tighter">
+          {/* SEO: Título H2 con palabra clave principal */}
+          <h2 className="text-5xl md:text-8xl font-black mb-6 leading-[0.9] tracking-tighter">
             ESPECIALISTAS EN <br />
             <span className="text-amber-500 drop-shadow-lg">PISOS DE PARQUÉT</span>
-          </h1>
+          </h2>
 
           <p className="text-xl md:text-2xl mb-10 text-slate-200 font-light max-w-3xl mx-auto leading-relaxed">
             Instalación y restauración en toda la ciudad de Arequipa con el acabado impecable del{" "}
@@ -149,9 +156,9 @@ function App() {
       </header>
 
       {/* --- SERVICIOS CON .MAP() --- */}
-      <section className="py-24 max-w-7xl mx-auto px-4">
+      <section className="py-24 max-w-7xl mx-auto px-4" aria-labelledby="servicios-titulo">
         <div className="text-center mb-16">
-          <h3 className="text-4xl font-black text-slate-900 uppercase italic leading-none">
+          <h3 id="servicios-titulo" className="text-4xl font-black text-slate-900 uppercase italic leading-none">
             Nuestros Servicios
           </h3>
           <p className="text-amber-700 font-bold mt-2">Maestría en cada detalle</p>
@@ -159,7 +166,8 @@ function App() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {servicios.map((s) => (
-            <div
+            // SEO: Usamos 'article' para servicios individuales
+            <article
               key={s.id}
               className={`relative group overflow-hidden rounded-[2.5rem] shadow-2xl transition-all duration-500
                 ${
@@ -174,7 +182,8 @@ function App() {
                   <img
                     src={s.img}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    alt={s.title}
+                    // SEO: Alt dinámico por servicio
+                    alt={`${s.title} por Brisas del Colca en Arequipa`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent"></div>
                 </>
@@ -196,11 +205,11 @@ function App() {
                 >
                   {s.title}
                 </h4>
-                <p className="text-slate-300 text-sm md:text-base leading-relaxed max-w-md opacity-80">
+                <p className=" text-slate-300 text-md md:text-xl leading-relaxed max-w-md opacity-80">
                   {s.desc}
                 </p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
@@ -208,7 +217,7 @@ function App() {
       {/* --- SECCIÓN CONTACTO --- */}
       <section id="contacto" className="bg-slate-900 py-24 text-white px-4 relative">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 relative z-10">
-          <div>
+          <header>
             <h3 className="text-5xl font-black mb-6 text-amber-500 italic uppercase leading-none">
               Contáctenos
             </h3>
@@ -240,7 +249,7 @@ function App() {
                 </div>
               </div>
             </div>
-          </div>
+          </header>
           <ContactForm />
         </div>
       </section>
@@ -258,7 +267,7 @@ function App() {
           <span>Seriedad</span>
         </div>
       </footer>
-    </div>
+    </main>
   );
 }
 
