@@ -64,7 +64,7 @@ function App() {
       title: "Zócalos Profesionales",
       desc: "Colocación de zócalos en madera y acabados estético impecable.",
       icon: <CheckCircle2 size={40} />,
-      img:"assets/zocalos.png",
+      img: "assets/zocalos.png",
       color: "bg-amber-700",
     },
   ];
@@ -72,7 +72,6 @@ function App() {
   return (
     // SEO: Usamos 'main' para indicar contenido principal
     <main className="min-h-screen bg-slate-50 font-sans text-slate-900">
-      
       {/* --- NAVBAR --- */}
       <nav className="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
@@ -89,7 +88,8 @@ function App() {
               href={`tel:${numeroLlamadas}`}
               className="bg-slate-900 text-white p-2 md:px-4 md:py-2 rounded-xl font-bold text-xs flex items-center gap-2 hover:bg-slate-700 transition"
             >
-              <Phone size={16} /> <span className="hidden md:block">Llamar</span>
+              <Phone size={16} />{" "}
+              <span className="hidden md:block">Llamar</span>
             </a>
             <a
               href={whatsappLink}
@@ -126,11 +126,14 @@ function App() {
           {/* SEO: Título H2 con palabra clave principal */}
           <h2 className="text-5xl md:text-8xl font-black mb-6 leading-[0.9] tracking-tighter">
             ESPECIALISTAS EN <br />
-            <span className="text-amber-500 drop-shadow-lg">PISOS DE PARQUÉT</span>
+            <span className="text-amber-500 drop-shadow-lg">
+              PISOS DE PARQUÉT
+            </span>
           </h2>
 
           <p className="text-xl md:text-2xl mb-10 text-slate-200 font-light max-w-3xl mx-auto leading-relaxed">
-            Instalación y restauración en toda la ciudad de Arequipa con el acabado impecable del{" "}
+            Instalación y restauración en toda la ciudad de Arequipa con el
+            acabado impecable del{" "}
             <span className="underline decoration-amber-500 underline-offset-8 text-3xl">
               Maestro Emilio
             </span>
@@ -156,12 +159,20 @@ function App() {
       </header>
 
       {/* --- SERVICIOS CON .MAP() --- */}
-      <section className="py-24 max-w-7xl mx-auto px-4" aria-labelledby="servicios-titulo">
+      <section
+        className="py-24 max-w-7xl mx-auto px-4"
+        aria-labelledby="servicios-titulo"
+      >
         <div className="text-center mb-16">
-          <h3 id="servicios-titulo" className="text-4xl font-black text-slate-900 uppercase italic leading-none">
+          <h3
+            id="servicios-titulo"
+            className="text-4xl font-black text-slate-900 uppercase italic leading-none"
+          >
             Nuestros Servicios
           </h3>
-          <p className="text-amber-700 font-bold mt-2">Maestría en cada detalle</p>
+          <p className="text-amber-700 font-bold mt-2">
+            Maestría en cada detalle
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -215,42 +226,61 @@ function App() {
       </section>
 
       {/* --- SECCIÓN CONTACTO --- */}
-      <section id="contacto" className="bg-slate-900 py-24 text-white px-4 relative">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 relative z-10">
-          <header>
+      <section
+        id="contacto"
+        className="bg-slate-900 py-24 text-white px-4 relative"
+      >
+        <div className="max-w-3xl mx-auto relative z-10">
+          <header className="text-center">
             <h3 className="text-5xl font-black mb-6 text-amber-500 italic uppercase leading-none">
               Contáctenos
             </h3>
-            <p className="text-slate-400 text-lg mb-10 leading-relaxed">
-              Trabajos con **Prontitud, Garantía y Seriedad**. Atendido personalmente por el Maestro Emilio en todo Arequipa.
+
+            <p className="text-slate-400 text-lg mb-12 leading-relaxed">
+              Trabajos con{" "}
+              <span className="font-bold text-white">
+                Prontitud, Garantía y Seriedad
+              </span>
+              . Atendido personalmente por el Maestro Emilio en todo Arequipa.
             </p>
 
-            <div className="space-y-4">
-              <div className="bg-slate-800/50 p-6 rounded-3xl border border-slate-700 flex items-center gap-5">
+            <div className="space-y-6">
+              <div className="bg-slate-800/50 p-6 rounded-3xl border border-slate-700 flex items-center gap-5 justify-center">
                 <div className="bg-amber-600 p-3 rounded-2xl">
                   <Phone size={24} />
                 </div>
-                <div>
+                <div className="text-left">
                   <p className="text-xs text-slate-500 uppercase font-bold tracking-widest">
                     Llamadas
                   </p>
-                  <p className="text-2xl font-black text-amber-500">{numeroLlamadas}</p>
-                </div>
-              </div>
-              <div className="bg-slate-800/50 p-6 rounded-3xl border border-slate-700 flex items-center gap-5">
-                <div className="bg-green-600 p-3 rounded-2xl">
-                  <MessageCircle size={24} />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-500 uppercase font-bold tracking-widest">
-                    WhatsApp
+                  <p className="text-2xl font-black text-amber-500">
+                    {numeroLlamadas}
                   </p>
-                  <p className="text-2xl font-black text-green-500">{numeroWhatsapp}</p>
                 </div>
               </div>
+
+              <a
+                href={`https://wa.me/51${numeroWhatsapp}?text=Hola%20Maestro%20Emilio,%20deseo%20una%20cotización.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="bg-slate-800/50 p-6 rounded-3xl border border-slate-700 flex items-center gap-5 justify-center hover:border-green-500 hover:bg-slate-800 transition">
+                  <div className="bg-green-600 p-3 rounded-2xl">
+                    <MessageCircle size={24} />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-xs text-slate-500 uppercase font-bold tracking-widest">
+                      WhatsApp
+                    </p>
+                    <p className="text-2xl font-black text-green-500">
+                      {numeroWhatsapp}
+                    </p>
+                  </div>
+                </div>
+              </a>
             </div>
           </header>
-          <ContactForm />
         </div>
       </section>
 
@@ -258,7 +288,9 @@ function App() {
         <h2 className="font-black text-slate-900 text-2xl tracking-tighter uppercase mb-1">
           Brisas del Colca
         </h2>
-        <p className="text-[10px] text-slate-400 uppercase tracking-widest mb-4">Arequipa, Perú</p>
+        <p className="text-[10px] text-slate-400 uppercase tracking-widest mb-4">
+          Arequipa, Perú
+        </p>
         <div className="flex justify-center gap-4 text-[10px] font-bold text-amber-700 uppercase tracking-[0.3em]">
           <span>Prontitud</span>
           <span>•</span>
