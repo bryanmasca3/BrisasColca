@@ -34,18 +34,18 @@ function App() {
     {
       id: 2,
       title: "Pulidos de Parquet",
-      desc: "Nivelamiento y pulido de pisos de parquet con acabados profesionales.",
+      desc: "Nivelamiento y pulido de pisos de parquet con acabados profesionales. Pisos de Parqueton y machimbrados",
       img: "assets/pulidos.png",
     },
     {
       id: 3,
       title: "Barnizados de Lujo",
-      desc: "Protección con barniz DD para pisos de parquet con acabados brillantes.",
+      desc: "Barnizado con tekno DD para pisos.",
       img: "assets/barnizado.png",
     },
     {
       id: 4,
-      title: "Laminados y Vinílicos",
+      title: "Laminados, piso SPC y Vinílicos",
       desc: "Instalación de pisos modernos de alto tránsito, resistentes y de fácil mantenimiento.",
       icon: <Layers size={40} />,
       img: "assets/laminados.png",
